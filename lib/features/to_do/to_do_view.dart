@@ -12,7 +12,7 @@ class ToDoApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    var allToDos = ref.watch(todoProvider);
+    var allToDos = ref.watch(filteredProvider);
 
     return Scaffold(
       body: Padding(
