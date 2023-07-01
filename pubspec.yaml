@@ -20,6 +20,8 @@ dependencies:
 
   uuid:
 
+  flutter_riverpod: ^2.3.6
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
