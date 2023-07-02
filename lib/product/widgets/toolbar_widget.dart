@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:to_do_app/product/constants/string_constants.dart';
 import 'package:to_do_app/product/providers/all_providers.dart';
 
 class ToolBarWidget extends ConsumerWidget {
@@ -8,12 +9,12 @@ class ToolBarWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     int unCompletedToDoCount = ref.watch(unCompletedTodoCount);
-    var _currentFilter = ToDoListFilter.all;
+    var currentFilter = ToDoListFilter.all;
 
-    _currentFilter = ref.watch(todoListFilterProvider);
+    currentFilter = ref.watch(todoListFilterProvider);
 
     Color changeTextColor(ToDoListFilter filter) {
-      return _currentFilter == filter ? Colors.orange : Colors.black;
+      return currentFilter == filter ? Colors.orange : Colors.black;
     }
 
     return Row(
@@ -23,11 +24,11 @@ class ToolBarWidget extends ConsumerWidget {
             child: Text(
           unCompletedToDoCount != 0
               ? "$unCompletedToDoCount uncompleted todos"
-              : "There is not todo",
+              : StringConstants.notToDos,
           overflow: TextOverflow.ellipsis,
         )),
         Tooltip(
-          message: "All Todos",
+          message: StringConstants.allToDosMessage,
           child: TextButton(
               style: TextButton.styleFrom(
                   foregroundColor: changeTextColor(ToDoListFilter.all)),
@@ -35,10 +36,10 @@ class ToolBarWidget extends ConsumerWidget {
                 ref.read(todoListFilterProvider.notifier).state =
                     ToDoListFilter.all;
               },
-              child: const Text("All")),
+              child: const Text(StringConstants.allToDos)),
         ),
         Tooltip(
-          message: "Only Uncompleted Todos",
+          message: StringConstants.activeToDosMessage,
           child: TextButton(
               style: TextButton.styleFrom(
                   foregroundColor: changeTextColor(ToDoListFilter.active)),
@@ -46,10 +47,10 @@ class ToolBarWidget extends ConsumerWidget {
                 ref.read(todoListFilterProvider.notifier).state =
                     ToDoListFilter.active;
               },
-              child: const Text("Active")),
+              child: const Text(StringConstants.activeToDos)),
         ),
         Tooltip(
-          message: "Only Completed Todos",
+          message: StringConstants.completedToDosMessage,
           child: TextButton(
               style: TextButton.styleFrom(
                   foregroundColor: changeTextColor(ToDoListFilter.completed)),
@@ -57,7 +58,7 @@ class ToolBarWidget extends ConsumerWidget {
                 ref.read(todoListFilterProvider.notifier).state =
                     ToDoListFilter.completed;
               },
-              child: const Text("Complete")),
+              child: const Text(StringConstants.completedToDos)),
         ),
       ],
     );

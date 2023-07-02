@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:to_do_app/product/constants/string_constants.dart';
 import 'package:to_do_app/product/providers/all_providers.dart';
 import 'package:to_do_app/product/widgets/title_widget.dart';
 import 'package:to_do_app/product/widgets/todo_list_item_widget.dart';
@@ -23,7 +24,7 @@ class ToDoApp extends ConsumerWidget {
             TextFormField(
               controller: _controller,
               decoration:
-                  const InputDecoration(labelText: "What will you do today ? "),
+                  const InputDecoration(labelText: StringConstants.toUserMessage),
               onFieldSubmitted: (value) {
                 //print("$value");
                 ref.read(todoProvider.notifier).addToDo(value);

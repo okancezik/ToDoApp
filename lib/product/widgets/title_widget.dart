@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:to_do_app/product/constants/string_constants.dart';
 
 class TitleWidget extends StatelessWidget {
   const TitleWidget({super.key});
@@ -6,10 +7,13 @@ class TitleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Text(
-      "todo app",
+      StringConstants.appName,
       textAlign: TextAlign.center,
       style: TextStyle(
-          color: Colors.orange, fontSize: 80, fontWeight: FontWeight.w200,),
+        color: Colors.orange,
+        fontSize: 80,
+        fontWeight: FontWeight.w200,
+      ),
     );
   }
 }
