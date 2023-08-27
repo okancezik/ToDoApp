@@ -1,16 +1,11 @@
-# to_do_app
+# Functional ToDo App
 
-A new Flutter project.
+<img src="https://storage.googleapis.com/cms-storage-bucket/70760bf1e88b184bb1bc.png" height="100"/> 
 
-## Getting Started
+## About :
+Users can add and edit the tasks they will do during the day to the list. They can follow the list
 
-This project is a starting point for a Flutter application.
+## Video 📷 :
 
-A few resources to get you started if this is your first Flutter project:
+https://github.com/okancezik/ToDoApp/assets/73329707/b6c3109f-5d63-4ef3-94ee-294c2722ad06
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
